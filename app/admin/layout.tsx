@@ -17,7 +17,7 @@ export default function RootLayout({
         <AdminSidebar />
       </aside>
       <div className="w-full h-full flex items-center justify-center md:justify-start">
-        <div className="max-h-[90vh] h-full w-[97%]">
+        <div className="max-h-[90vh] h-full w-[99%]">
           {children}
         </div>
       </div>

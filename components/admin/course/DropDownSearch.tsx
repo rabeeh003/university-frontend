@@ -21,8 +21,8 @@ const DropdownSearch: React.FC<DropdownSearchProps> = ({ options, onChange }) =>
   const customStyles: StylesConfig<{ id: number; name: string }, false> = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: theme === 'light' ? '#fff' : '#333',
-      borderColor: theme === 'light' ? '#ccc' : '#444',
+      backgroundColor: theme === 'light' ? '#fff' : '',
+      borderColor: theme === 'light' ? '#ccc' : '',
       color: theme === 'light' ? '#000' : '#fff',
     }),
     menu: (provided) => ({

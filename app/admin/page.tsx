@@ -16,13 +16,7 @@ export default function Home() {
   return (
     <main>
       <SubNav title="Dashboard" breadcrumb={
-        <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/admin">Dashboard</BreadcrumbLink>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+        ""
       }>
         <input
           type="text"
@@ -30,14 +24,16 @@ export default function Home() {
           className="px-4 py-2 border rounded-lg"
         />
       </SubNav>
-      <div className="w-full bg-muted flex mt-3 p-3 rounded-md">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
-        />
-      </div>
+      <aside className="w-full h-[calc(100vh-200px)] bg-muted mt-3 p-3 rounded-md">
+        <section className="flex">
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
+          />
+        </section>
+      </aside>
     </main>
   );
 }
