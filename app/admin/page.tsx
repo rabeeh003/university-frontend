@@ -2,14 +2,6 @@
 import React from "react"
 import SubNav from "@/components/admin/SubNav";
 import { Calendar } from "@/components/ui/calendar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { SlashIcon } from "lucide-react";
 
 export default function Home() {
   const [date, setDate] = React.useState<Date | undefined>(new Date())

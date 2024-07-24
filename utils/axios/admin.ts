@@ -1,11 +1,14 @@
 import axios from 'axios';
+import { baseURL } from '../constValue';
+import { getCookie } from '../cookie';
 
 const adminAPI = axios.create({
-  baseURL: 'http://127.0.0.1:8000/',
+  baseURL: baseURL,
+  withCredentials: true,
 });
 
 adminAPI.interceptors.request.use((config) => {
-  const token = localStorage.getItem('admin');
+  const token = getCookie('admin');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

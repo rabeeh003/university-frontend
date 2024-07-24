@@ -12,35 +12,34 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PlusIcon } from "lucide-react";
 import adminAPI from "@/utils/axios/admin";
-import { useRouter } from "next/router";
 import { FormEvent } from "react";
 
 export function AddBook() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const book = formData.get("book")?.toString() ?? "";
+    const name = formData.get("book")?.toString() ?? "";
     const author = formData.get("author")?.toString() ?? "";
 
-    if (book === "" || author === "") {
+    if (name === "" || author === "") {
       alert("Please fill out all fields.");
       return;
     }
 
     try {
-      await adminAPI.post("/education/subjects/", { book, author });
-      alert("Book added successfully!");
-      e.currentTarget.reset();
+      await adminAPI.post("/education/subjects/", { name, author });
       window.location.reload();
     } catch (error) {
-      alert("Failed to add book. Please try again.");
+      console.error("Error adding book:", error);
     }
   };
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <PlusIcon className="text-primary" />
+        <Button variant="outline">
+          <PlusIcon className="text-primary" />
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -63,7 +62,7 @@ export function AddBook() {
             <Input id="author" name="author" placeholder="Enter author name" className="col-span-3" />
           </div>
           <DialogFooter>
-            <Button type="submit">Add book</Button>
+            <Button type="submit">Add Book</Button>
           </DialogFooter>
         </form>
       </DialogContent>

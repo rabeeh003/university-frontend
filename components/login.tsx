@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import adminAPI from '@/utils/axios/admin';
 import axios from 'axios';
+import { baseURL } from '@/utils/constValue';
 
 interface LoginProps {
   heading: string;
@@ -17,7 +18,7 @@ const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute }) => {
     if (loginRoute === '/account/admin/login/' && localStorage.getItem('admin')) {
       window.location.href = '/admin';
     }
-  })  
+  })
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [error, setError] = React.useState('');
@@ -29,14 +30,16 @@ const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute }) => {
       setError('Please enter your username and password');
       return;
     }
-    adminAPI.post(loginRoute, { username, password }).then((res) => {
-      console.log(res.data, 'token data');
-      localStorage.setItem('admin', res.data.access);
-      window.location.href = '/admin';
-    }).catch((err) => {
-      setError("username or password is wrong");
-      return;
-    })
+    axios.post(baseURL+'account/admin/login/', { username, password },
+      { withCredentials: true })
+      .then((res) => {
+        console.log(res.data, 'token data');
+        localStorage.setItem('admin', res.data.access);
+        window.location.href = '/admin';
+      }).catch((err) => {
+        setError("username or password is wrong");
+        return;
+      })
   }
   return (
     <section className="flex min-h-screen items-center justify-center text-white">
