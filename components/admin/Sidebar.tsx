@@ -4,8 +4,12 @@ import { BellDot, BookDashed, GraduationCap, LayoutDashboard, LogOut, NotebookTe
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import Image from 'next/image';
+import { useAppDispatch } from '@/lib/redux/hooks';
+import { logout } from '@/lib/redux/reduceres/admin';
+import Logout from './Logout';
 
 const AdminSidebar: React.FC = () => {
+  const dispatch = useAppDispatch();
   return (
     <section className="max-w-[250px] w-full h-[90vh] p-4 bg-muted rounded-lg flex flex-col justify-between">
       <div>
@@ -64,9 +68,7 @@ const AdminSidebar: React.FC = () => {
         <Button variant={'outline'}>
           <Settings size={15} />
         </Button>
-        <Button variant={'outline'}>
-          <LogOut size={15}/>
-        </Button>
+        <Logout/>
         <ModeToggle />
       </div>
     </section>
