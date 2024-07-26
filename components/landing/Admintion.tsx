@@ -43,9 +43,17 @@ export function AdmitionSection() {
                 Admission now open for Jamia Junior College Secondary and Senior Secondary Courses.
             </motion.h3>
             <div className="w-full flex justify-center gap-2 mt-2">
-                <Button variant={"outline"}>Prospectus</Button>
-                <Button variant={"secondary"}>Applay Now</Button>
+                <a
+                    href="https://jjc.jamianooriya.in/wp-content/uploads/2024/03/pros2024.pdf"
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Button variant="outline">Prospectus</Button>
+                </a>
+                <Button variant="secondary">Apply Now</Button>
             </div>
+
         </HeroHighlight>
     );
 }
