@@ -14,7 +14,7 @@ export function HeroSection() {
           Jamia Juniar College <br /> Co-ordinarion.
         </h1>
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-        The concept of Junior Colleges was approved by the meeting held at Chelari Samasthalaya on 9.2.2010. The system is managed by the Coordination of Jami'ah Junior Colleges headquartered at Jami'ah Nooriya.
+        The concept of Junior Colleges was approved by the meeting held at Chelari Samasthalaya on 9.2.2010. The system is managed by the Coordination of Jami&apos;ah Junior Colleges headquartered at Jami&apos;ah Nooriya.
         </p>
       </div>
     </div>
