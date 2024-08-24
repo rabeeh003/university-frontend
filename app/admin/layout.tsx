@@ -20,6 +20,7 @@ export default function RootLayout({
   const router = useRouter();
 
   useEffect(() => {
+    console.log("feching data again");
     dispatch(fetchAdminData());
   }, [dispatch]);
 

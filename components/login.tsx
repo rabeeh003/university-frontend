@@ -6,6 +6,7 @@ import Link from 'next/link';
 import adminAPI from '@/utils/axios/admin';
 import axios from 'axios';
 import { baseURL } from '@/utils/constValue';
+import { getCookie } from '@/utils/cookie';
 
 interface LoginProps {
   heading: string;
@@ -15,7 +16,7 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute }) => {
   useEffect(() => {
-    if (loginRoute === '/account/admin/login/' && localStorage.getItem('admin')) {
+    if (loginRoute === '/account/admin/login/' && getCookie('admin')) {
       window.location.href = '/admin';
     }
   })
@@ -34,7 +35,6 @@ const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute }) => {
       { withCredentials: true })
       .then((res) => {
         console.log(res.data, 'token data');
-        localStorage.setItem('admin', res.data.access);
         window.location.href = '/admin';
       }).catch((err) => {
         setError("username or password is wrong");
