@@ -7,7 +7,7 @@ function Page() {
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <Login heading={heading} quote={quote} loginRoute='/account/admin/login/' />
+      <Login heading={heading} quote={quote} nextRout={'/admin/'} loginRoute='/account/admin/login/' />
     </div>
   )
 }

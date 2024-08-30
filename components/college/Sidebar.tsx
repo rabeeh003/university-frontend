@@ -18,17 +18,17 @@ const AdminSidebar: React.FC = () => {
           {/* <h1 className=''>JC ADMIN</h1> */}
         </div>
         <nav className='flex flex-col items-end h-[72vh] overflow-auto scrollbar-hide'>
-          <Link href='/admin' className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
+          <Link href='/college' className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
             <LayoutDashboard size={20} className='flex justify-center items-center mr-2' />
             <span>Dashboard</span>
           </Link>
-          <Link href={'/admin/students'} className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
+          <Link href={'/college/students'} className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
             <Users size={20} className='flex justify-center items-center mr-2' />
             <span>Students</span>
           </Link>
-          <Link href={'/admin/colleges'} className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
+          <Link href={'/college/teachers'} className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
             <School size={20} className='flex justify-center items-center mr-2' />
-            <span>J-Colleges</span>
+            <span>Teachers</span>
           </Link>
           <div className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
             <GraduationCap size={20} className='flex justify-center items-center mr-2' />
@@ -68,7 +68,7 @@ const AdminSidebar: React.FC = () => {
         <Button variant={'outline'}>
           <Settings size={15} />
         </Button>
-        <Logout userType='admin' nextUrl='/auth/admin'/>
+        <Logout userType='college' nextUrl='auth/college'/>
         <ModeToggle />
       </div>
     </section>

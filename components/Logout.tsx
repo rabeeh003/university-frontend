@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
-import { Button } from '../ui/button';
-import { LogOut } from 'lucide-react';
-import { useAppDispatch } from '@/lib/redux/hooks';
+import { Button } from '@/components/ui/button';import { LogOut } from 'lucide-react';
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogTrigger, AlertDialogAction, AlertDialogCancel } from '@/components/ui/alert-dialog';
+import axios from 'axios';
+import adminAPI from '@/utils/axios/admin';
 
-function Logout() {
-  const dispatch = useAppDispatch();
+
+function Logout({ userType, nextUrl }: { userType: string, nextUrl: string }) {
   const [open, setOpen] = useState(false);
 
-  const handleLogout = () => {
-    localStorage.removeItem('admin');
-    dispatch({ type: 'admin/logout' });
-    window.location.href = '/auth/admin/';
+  const handleLogout = async () => {
+    try {
+      const response = await adminAPI.post('account/logout/', {
+        user_type: userType,
+      }, {
+        withCredentials: true,
+      });
+      console.log(response.data);
+      window.location.href = nextUrl;
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   };
 
   return (

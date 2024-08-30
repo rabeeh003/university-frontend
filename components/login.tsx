@@ -12,14 +12,18 @@ interface LoginProps {
   heading: string;
   quote: string;
   loginRoute: string;
+  nextRout: string;
 }
 
-const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute }) => {
-  useEffect(() => {
-    if (loginRoute === '/account/admin/login/' && getCookie('admin')) {
-      window.location.href = '/admin';
-    }
-  })
+const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute, nextRout }) => {
+  
+  if (loginRoute === '/account/admin/login/' && getCookie('admin')) {
+    window.location.href = '/admin';
+  }
+  if (loginRoute === '/account/login/college/' && getCookie('college')) {
+    window.location.href = '/college';
+  }
+
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [error, setError] = React.useState('');
@@ -31,11 +35,11 @@ const Login: React.FC<LoginProps> = ({ heading, quote, loginRoute }) => {
       setError('Please enter your username and password');
       return;
     }
-    axios.post(baseURL+'account/admin/login/', { username, password },
+    axios.post(baseURL+loginRoute, { username, password },
       { withCredentials: true })
       .then((res) => {
         console.log(res.data, 'token data');
-        window.location.href = '/admin';
+        window.location.href = nextRout ;
       }).catch((err) => {
         setError("username or password is wrong");
         return;

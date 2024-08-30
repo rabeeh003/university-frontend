@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import adminReducer from './reduceres/admin'
+import collegeReducer from './reduceres/college'
 export const makeStore = () => {
     return configureStore({
         reducer: {
             admin: adminReducer,
+            college: collegeReducer,
         },
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({

@@ -117,6 +117,7 @@ const config = {
     addVariablesForColors,
     require("tailwindcss-animate"),
     require("tailwind-scrollbar-hide"),
+    require('@tailwindcss/line-clamp'),
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {

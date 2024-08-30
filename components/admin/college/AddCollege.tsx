@@ -47,6 +47,7 @@ export function AddCollege() {
         first_name: collegeName,
         username,
         password,
+        is_staff: true,
         email,
         phone,
         place,
@@ -54,7 +55,7 @@ export function AddCollege() {
         district,
       });
       setLoading(false);
-      router.push("/admin/college");
+      router.push("/admin/colleges");
     } catch (error) {
       setError("Error adding college. Please try again.");
       console.error("Error adding college:", error);
