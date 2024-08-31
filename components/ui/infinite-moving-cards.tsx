@@ -89,7 +89,7 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="w-[200px] max-w-screen relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6  md:w-[450px]"
+                        className="min-w-[300px] max-w-screen relative bg-slate-100 rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6  md:w-[450px]"
                         style={{
                             backgroundImage: item.bg,
                             backgroundSize: 'cover', 
@@ -120,7 +120,6 @@ export const InfiniteMovingCards = ({
                                     <AvatarImage src={item.logo} sizes="xl" />
                                     <AvatarFallback>C</AvatarFallback>
                                 </Avatar>
-
                             </div>
                         </blockquote>
                     </li>

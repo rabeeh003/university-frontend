@@ -5,7 +5,7 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export function CollegeSection() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="  flex flex-col antialiased bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
@@ -22,11 +22,58 @@ export function CollegeSection() {
 
 const testimonials = [
   {
-    logo:"../../public/jmiclogo.jfif",
+    logo:"/jmiclogo.jfif",
     bg:"/jmicbg.jfif",
     name: "Jamia mahiriyya",
     place: "calicut, ramanattukara",
   },
-  
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "kmic",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "vmic",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "Jamia mahiriyya",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "kmic",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "vmic",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "Jamia mahiriyya",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "kmic",
+    place: "calicut, ramanattukara",
+  },
+  {
+    logo:"/jmiclogo.jfif",
+    bg:"/jmicbg.jfif",
+    name: "vmic",
+    place: "calicut, ramanattukara",
+  }
   
 ];

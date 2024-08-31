@@ -1,7 +1,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { Meteors } from "../ui/meteors";
 
-export function CourseList() {
+export function CourseList({data}:{data:any}) {
   
   return (
     // < className="">
@@ -25,14 +25,12 @@ export function CourseList() {
             </svg>
           </div>
  
-          <h1 className="font-bold text-xl text-white mb-4 relative z-50">
-            Meteors because they&apos;re cool
+          <h1 className="font-bold text-xl text-white mb-4 relative z-40">
+            {data.course_name}
           </h1>
  
-          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
-            I don&apos;t know what to write so I&apos;ll just paste something
-            cool here. One more sentence because lorem ipsum is just
-            unacceptable. Won&apos;t ChatGPT the shit out of this.
+          <p className="font-normal text-base text-slate-500 mb-4 relative z-40">
+            {data.des}
           </p>
  
           <button className="border px-4 py-1 rounded-lg  border-gray-500 text-gray-300">
