@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModeToggle } from '../togle-theme';
-import { BellDot, BookDashed, GraduationCap, LayoutDashboard, LogOut, NotebookText, ReceiptText, School, Settings, Sheet, UserRoundPlus, Users } from 'lucide-react';
+import { BellDot, BookDashed, GraduationCap, LayoutDashboard, LogOut, MoreHorizontalIcon, NotebookText, ReceiptText, School, Settings, Sheet, UserRoundPlus, Users } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import Image from 'next/image';
@@ -11,13 +11,18 @@ import Logout from '../Logout';
 const AdminSidebar: React.FC = () => {
   const dispatch = useAppDispatch();
   return (
-    <section className="max-w-[250px] w-full h-[90vh] p-4 bg-muted rounded-lg flex flex-col justify-between">
+    <section className=" md:max-w-[250px] w-full md:h-full p-4 bg-muted rounded-lg flex flex-col justify-between">
       <div>
-        <div className='w-full dark:bg-muted-foreground rounded-sm'>
-          <Image alt='logo' className='m-auto mb-2' src='/cjjc.png' width={120} height={100} />
-          {/* <h1 className=''>JC ADMIN</h1> */}
+        <div className='w-full flex justify-between px-3 items-center dark:bg-muted-foreground rounded-sm'>
+          <Image alt='logo' className='md:m-auto mb-2' src='/cjjc.png' width={120} height={100} />
+          <div className='flex md:hidden items-center gap-2'>
+            <ModeToggle />
+            <Button variant={'outline'}>
+              <MoreHorizontalIcon size={15} />
+            </Button>
+          </div>
         </div>
-        <nav className='flex flex-col items-end h-[72vh] overflow-auto scrollbar-hide'>
+        <nav className='hidden md:flex flex-col items-end md:h-[72vh] overflow-auto scrollbar-hide'>
           <Link href='/admin' className='flex items-center w-full bg-background p-2 rounded-sm mb-1'>
             <LayoutDashboard size={20} className='flex justify-center items-center mr-2' />
             <span>Dashboard</span>
@@ -64,11 +69,11 @@ const AdminSidebar: React.FC = () => {
           </Link>
         </nav>
       </div>
-      <div className='flex justify-between'>
+      <div className='hidden md:flex justify-between'>
         <Button variant={'outline'}>
           <Settings size={15} />
         </Button>
-        <Logout userType='admin' nextUrl='/auth/admin'/>
+        <Logout userType='admin' nextUrl='/auth/admin' />
         <ModeToggle />
       </div>
     </section>

@@ -18,8 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full h-full flex items-center justify-center md:justify-start">
-      <div className="max-h-[90vh] h-full w-[97%]">
+    <div className="w-full">
       <SubNav title="Rabeeh" breadcrumb={
         <Breadcrumb>
           <BreadcrumbList>
@@ -32,16 +31,12 @@ export default function RootLayout({
             <BreadcrumbItem>
               <BreadcrumbLink href="/admin/students">Students</BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/admin/students">Students</BreadcrumbLink>
-            </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       }>
         <FilterStudent />
       </SubNav>
-        {children}
-      </div>
+      {children}
     </div>
   );
 }

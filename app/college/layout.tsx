@@ -32,12 +32,12 @@ export default function RootLayout({
   }, [dispatch, cooki]);
 
   if (username) return (
-    <main className="h-screen flex flex-col md:flex-row">
-      <aside className="w-full h-screen p-4 flex justify-center items-center align-middle md:max-w-[300px]">
+    <main className="h-screen flex flex-col md:flex-row p-2 md:p-5 lg:p-10">
+      <aside className="w-full h-full flex justify-center items-center align-middle md:max-w-[250px] md:me-5">
         <AdminSidebar />
       </aside>
-      <div className="w-full h-full flex items-center justify-center md:justify-start">
-        <div className="max-h-[90vh] h-full w-[99%]">
+      <div className="w-full h-fullflex items-center justify-center md:justify-start">
+        <div className="w-full h-full overflow-y-scroll scrollbar-hide relative rounded-md">
           {loading ? (
             <p className="text-center justify-center">Loading...</p>
           ) : (

@@ -127,8 +127,8 @@ export default function Course() {
       >
         <div></div>
       </SubNav>
-      <div className="w-full h-[calc(100vh-200px)] bg-muted mt-3 p-3 rounded-md grid grid-cols-12  gap-4">
-        <section className="bg-background col-span-12 md:col-span-4 xl:col-span-3 p-4 rounded-lg shadow-md">
+      <div className="w-full h-full bg-muted mt-3 p-3 rounded-md grid grid-cols-12  gap-4">
+        <section className="bg-background col-span-12 md:col-span-6 xl:col-span-3 p-4 rounded-lg shadow-md">
           <div className="flex justify-between pb-2 border-b-2">
             <h2 className="text-xl font-bold">Courses</h2>
             <div className="px-2 py-1 rounded-lg">
@@ -163,7 +163,7 @@ export default function Course() {
           )}
         </section>
 
-        <section className="bg-background p-4 col-span-12 md:col-span-5 xl:col-span-3 rounded-lg shadow-md">
+        <section className="bg-background p-4 col-span-12 md:col-span-6 xl:col-span-3 rounded-lg shadow-md">
           <div className="flex justify-between pb-2 border-b-2">
             <h2 className="text-xl font-bold">Departments</h2>
             <div className="px-2 py-1 rounded-lg">
@@ -202,7 +202,7 @@ export default function Course() {
           </div>
         </section>
 
-        <section className="bg-background p-4 col-span-12 md:col-span-12 xl:col-span-4 rounded-lg shadow-md">
+        <section className="bg-background p-4 col-span-12 md:col-span-9 xl:col-span-4 rounded-lg shadow-md">
           <div className="flex justify-between pb-2 border-b-2">
             <h2 className="text-xl font-bold">Syllabus</h2>
             <button className="px-2 py-1 rounded-lg">

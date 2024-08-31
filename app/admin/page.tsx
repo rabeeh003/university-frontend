@@ -16,7 +16,23 @@ export default function Home() {
           className="px-4 py-2 border rounded-lg"
         />
       </SubNav>
-      <aside className="w-full h-[calc(100vh-200px)] bg-muted mt-3 p-3 rounded-md">
+      <aside className="w-full bg-muted mt-3 p-3 rounded-md">
+        <section className="flex">
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
+          />
+        </section>
+        <section className="flex">
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
+          />
+        </section>
         <section className="flex">
           <Calendar
             mode="single"

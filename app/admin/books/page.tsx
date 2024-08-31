@@ -32,7 +32,7 @@ export default async function Course() {
   console.log(data, 'data');
   
   return (
-    <main className="w-full text-center h-[calc(100vh-200px)] overflow-y-auto bg-muted mt-3 p-3 rounded-md grid grid-cols sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <main className="w-full text-center bg-muted mt-3 p-3 rounded-md grid grid-cols sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {data?.map((book) => (
         <div
           key={book.id}

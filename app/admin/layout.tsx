@@ -38,12 +38,12 @@ export default function RootLayout({
 
   if (loading) return <p className="text-center">Loading...</p>;
   if (username) return (
-    <main className="h-screen flex flex-col md:flex-row">
-      <aside className="w-full h-screen p-4 flex justify-center items-center align-middle md:max-w-[300px]">
+    <main className="h-screen flex flex-col md:flex-row p-2 md:p-5 lg:p-10">
+      <aside className="sticky top-0 z-50  w-full mb-2 md:mb-0 md:h-full md:flex justify-center items-center align-middle md:max-w-[250px] md:me-5">
         <AdminSidebar />
       </aside>
       <div className="w-full h-full flex items-center justify-center md:justify-start">
-        <div className="max-h-[90vh] h-full w-[99%]">
+        <div className="w-full h-full overflow-y-scroll scrollbar-hide relative rounded-md">
           {children}
         </div>
       </div>
