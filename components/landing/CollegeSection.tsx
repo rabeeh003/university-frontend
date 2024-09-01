@@ -16,6 +16,11 @@ export function CollegeSection() {
         direction="left"
         speed="slow"
       />
+      <InfiniteMovingCards
+        items={testimonials}
+        direction="right"
+        speed="slow"
+      />
     </div>
   );
 }
@@ -24,56 +29,26 @@ const testimonials = [
   {
     logo:"/jmiclogo.jfif",
     bg:"/jmicbg.jfif",
-    name: "Jamia mahiriyya",
+    name: "Jamia mahiriyya islamic college",
     place: "calicut, ramanattukara",
   },
   {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "kmic",
-    place: "calicut, ramanattukara",
+    logo:"/kottumala-college.jpeg",
+    bg:"/kottumala-college.jpeg",
+    name: "kottumala islamic complex",
+    place: "malappuram, Kalambadi",
   },
   {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "vmic",
-    place: "calicut, ramanattukara",
+    logo:"/kmic-logo.jpeg",
+    bg:"/kmic.jpeg",
+    name: "KMIC",
+    place: "palakkad, theyyottuchira",
   },
   {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "Jamia mahiriyya",
-    place: "calicut, ramanattukara",
+    logo:"/iga-koolivayal.jpeg",
+    bg:"/iga-koolivayal-1.jpeg",
+    name: "Imam Gazzali Academy",
+    place: "wayanad, koolivayal",
   },
-  {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "kmic",
-    place: "calicut, ramanattukara",
-  },
-  {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "vmic",
-    place: "calicut, ramanattukara",
-  },
-  {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "Jamia mahiriyya",
-    place: "calicut, ramanattukara",
-  },
-  {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "kmic",
-    place: "calicut, ramanattukara",
-  },
-  {
-    logo:"/jmiclogo.jfif",
-    bg:"/jmicbg.jfif",
-    name: "vmic",
-    place: "calicut, ramanattukara",
-  }
   
 ];

@@ -65,9 +65,9 @@ export const InfiniteMovingCards = ({
             if (speed === "fast") {
                 containerRef.current.style.setProperty("--animation-duration", "20s");
             } else if (speed === "normal") {
-                containerRef.current.style.setProperty("--animation-duration", "40s");
-            } else {
                 containerRef.current.style.setProperty("--animation-duration", "80s");
+            } else {
+                containerRef.current.style.setProperty("--animation-duration", "120s");
             }
         }
     };
@@ -89,14 +89,18 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="min-w-[300px] max-w-screen relative bg-slate-100 rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6  md:w-[450px]"
+                        className="min-w-[300px] max-w-screen relative bg-slate-100 rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-2  md:w-[350px]"
                         style={{
-                            backgroundImage: item.bg,
-                            backgroundSize: 'cover', 
+                            backgroundImage: `url(${item.bg})`,
+                            backgroundSize: 'cover',
                             backgroundPosition: 'center',
                         }}
                         key={item.name}
                     >
+                        <div
+                            className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent rounded-2xl"
+                            aria-hidden="true"
+                        ></div>
                         <blockquote className="min-h-[150px]">
                             <div
                                 aria-hidden="true"
@@ -106,11 +110,11 @@ export const InfiniteMovingCards = ({
                                 {/* {item.quote} */}
                             </span>
                             <div className="z-20 absolute bottom-4 left-4 mt-6 flex flex-row items-center">
-                                <span className="flex flex-col gap-1">
-                                    <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
+                                <span className="">
+                                    <span className=" text-md line-clamp-1 font-semibold leading-[1.6] text-gray-400">
                                         {item.name}
                                     </span>
-                                    <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
+                                    <span className=" text-sm line-clamp-1 leading-[1.6] text-gray-400 font-normal">
                                         {item.place}
                                     </span>
                                 </span>
