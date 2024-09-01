@@ -25,18 +25,6 @@ export default function Home() {
             className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
           />
         </section>
-        <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
-          />
-          <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-md border shadow dark:shadow-lg dark:border dark:border-gray-700"
-          />
       </aside>
     </main>
   );
