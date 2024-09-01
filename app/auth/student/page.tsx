@@ -6,7 +6,7 @@ const heading: string = "Student login"
 function Page() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <Login heading={heading} quote={quote} loginRoute='/account/student/login/' />
+      <Login nextRout='/student/' heading={heading} quote={quote} loginRoute='/account/student/login/' />
     </div>
   )
 }
